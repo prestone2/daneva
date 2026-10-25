@@ -1,0 +1,105 @@
+@layer components {
+  .home-editorial { padding-block: clamp(64px, 7vw, 112px); }
+  .about-layout { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(40px, 6vw, 96px); }
+  .about-image .operations-image-frame { aspect-ratio: 1; }
+  .about-capabilities { list-style: none; margin: 28px 0 32px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px; }
+  .about-capabilities li { border-left: 2px solid var(--color-brand); padding-left: 12px; font-size: 12px; font-weight: 700; line-height: 1.7; }
+  .services-section { background: #f5f8fc; border-block: 1px solid #e1e8f0; }
+  .service-rows { list-style: none; margin: 44px 0 0; padding: 0; border-top: 2px solid var(--color-brand); }
+  .service-rows li { border-bottom: 1px solid #cbd9e7; }
+  .service-row { display: grid; grid-template-columns: 38px 1fr 1fr 24px; align-items: start; gap: 28px; padding: 36px 12px; transition: background-color .18s; }
+  .service-row h3 { font-size: clamp(20px, 2vw, 28px); font-weight: 800; line-height: 1.35; letter-spacing: -.025em; }
+  .service-row p { color: #52647b; font-size: 14px; line-height: 1.85; }
+  .service-row > svg { color: var(--color-brand-dark); margin-top: 3px; }
+  .service-row:hover { background: #EAF2FA; }
+  .service-row:hover h3 { color: var(--color-brand-dark); }
+  .service-row:focus-visible { outline-offset: -3px; }
+  .corridor-section { border-bottom: 1px solid #e1e8f0; background: white; }
+  .corridor-section .editorial-heading { max-width: 780px; }
+  .corridor-diagram { margin: 48px 0 32px; padding: 48px 32px 24px; background: #f5f8fc; border: 1px solid #e1e8f0; }
+  .corridor-stops { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; margin: 0; padding: 0; }
+  .corridor-stops li { position: relative; text-align: center; min-width: 0; }
+  .corridor-stops li:not(:last-child)::before { content: ''; position: absolute; top: 9px; left: 50%; width: 100%; height: 2px; background: var(--color-brand); }
+  .corridor-stops li:not(:last-child)::after { content: ''; position: absolute; top: 5px; left: 100%; width: 10px; height: 10px; border-top: 2px solid var(--color-brand); border-right: 2px solid var(--color-brand); transform: translateX(-50%) rotate(45deg); }
+  .corridor-node { position: relative; z-index: 1; display: block; width: 20px; height: 20px; border: 5px solid var(--color-brand); background: white; border-radius: 50%; margin: 0 auto 28px; }
+  .corridor-stops h3 { font-size: 18px; font-weight: 800; letter-spacing: .08em; line-height: 1.6; }
+  .corridor-stops p { font-size: 13px; line-height: 1.7; color: #52647b; padding-inline: 8px; margin-top: 6px; }
+  .corridor-diagram figcaption { color: #52647b; font-size: 11px; line-height: 1.8; border-top: 1px solid #d5e1ed; padding-top: 20px; margin-top: 38px; }
+  .fleet-section { background: white; }
+  .fleet-layout { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(40px, 6vw, 96px); }
+  .editorial-copy { min-width: 0; }
+  .editorial-eyebrow { color: var(--color-brand-dark); display: flex; align-items: center; gap: 14px; }
+  .editorial-eyebrow::before { content: ''; width: 30px; height: 2px; background: var(--color-brand); flex-shrink: 0; }
+  .editorial-heading { font-size: clamp(34px, 3.6vw, 56px); font-weight: 800; line-height: 1.14; letter-spacing: -.045em; text-wrap: balance; }
+  .home-editorial .editorial-heading { margin-top: 20px; max-width: 600px; }
+  .editorial-description { font-size: 15px; line-height: 1.9; color: #52647b; margin-top: 24px; max-width: 620px; }
+  .operations-image { margin: 0; min-width: 0; }
+  .operations-image-frame { position: relative; overflow: hidden; background: #EAF2FA; aspect-ratio: 4 / 5; }
+  .operations-image-frame img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 65% center; }
+  .operations-image-placeholder { height: 100%; display: flex; flex-direction: column; justify-content: center; padding: clamp(24px, 4vw, 56px); border: 1px solid #d1deeb; }
+  .image-placeholder-mark { display: block; width: 40px; height: 3px; margin-bottom: 24px; background: var(--color-brand); }
+  .operations-image-placeholder p { font-size: 19px; font-weight: 700; line-height: 1.5; max-width: 230px; }
+  .operations-image-placeholder > span:last-child { color: #52647b; font-size: 13px; line-height: 1.8; max-width: 240px; margin-top: 12px; }
+  .operations-image figcaption { padding-top: 16px; color: #52647b; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; }
+  .fleet-features, .safety-principles { list-style: none; padding: 0; }
+  .fleet-features { margin: 28px 0 32px; }
+  .fleet-features li { display: grid; grid-template-columns: 30px 1fr; gap: 16px; padding-block: 16px; border-top: 1px solid #d5e1ed; }
+  .operation-number { color: var(--color-brand-dark); font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.8; }
+  .fleet-features h3 { font-size: 15px; font-weight: 800; line-height: 1.6; }
+  .fleet-features p { color: #52647b; font-size: 12px; line-height: 1.8; margin-top: 4px; }
+  .safety-section { background: #f5f8fc; border-top: 1px solid #e1e8f0; }
+  .safety-introduction, .safety-layout { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 96px); }
+  .safety-introduction { align-items: end; margin-bottom: 48px; }
+  .safety-introduction .editorial-description { margin: 0; }
+  .safety-image .operations-image-frame { aspect-ratio: 3 / 2; background: white; }
+  .safety-image .operations-image-placeholder { background: white; }
+  .safety-visual .button { margin-top: 30px; }
+  .safety-principles { margin: 0; border-top: 2px solid var(--color-brand); }
+  .safety-principles li { display: grid; grid-template-columns: 30px 1fr; gap: 16px; padding-block: 24px; border-bottom: 1px solid #d5e1ed; }
+  .safety-principles h3 { font-size: 18px; font-weight: 800; line-height: 1.5; }
+  .safety-principles p { color: #52647b; font-size: 13px; line-height: 1.85; margin-top: 8px; }
+  .freight-quote-section { padding-block: clamp(64px, 7vw, 100px); background: #102B4E; color: white; }
+  .freight-quote-layout { display: flex; align-items: center; justify-content: space-between; gap: 56px; }
+  .freight-quote-layout > div:first-child { max-width: 650px; }
+  .quote-accent { display: block; width: 52px; height: 3px; background: var(--color-brand); margin-bottom: 28px; }
+  .freight-quote-section p { max-width: 580px; color: #e1e9f3; font-size: 15px; line-height: 1.9; margin-top: 24px; }
+  .freight-quote-actions { display: flex; flex-direction: column; gap: 14px; flex-shrink: 0; }
+  .freight-quote-section :focus-visible { outline-color: white; }
+}
+
+@media (max-width: 1023px) {
+  .about-layout { gap: 36px; }
+  .about-capabilities { grid-template-columns: 1fr; gap: 12px; }
+  .service-row { grid-template-columns: 28px 1fr 1fr 24px; gap: 20px; }
+  .fleet-layout, .safety-introduction, .safety-layout { gap: 36px; }
+  .fleet-image .operations-image-frame { aspect-ratio: 3 / 5; }
+  .freight-quote-layout { flex-direction: column; align-items: flex-start; gap: 32px; }
+  .freight-quote-actions { flex-direction: row; flex-wrap: wrap; }
+}
+
+@media (max-width: 767px) {
+  .about-layout { grid-template-columns: 1fr; }
+  .about-image .operations-image-frame { aspect-ratio: 4 / 3; }
+  .about-capabilities { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .service-rows { margin-top: 32px; }
+  .service-row { grid-template-columns: 24px 1fr 24px; gap: 12px 14px; padding: 28px 4px; }
+  .service-row p { grid-column: 2; grid-row: 2; font-size: 13px; }
+  .service-row > svg { grid-column: 3; grid-row: 1; }
+  .corridor-diagram { margin-top: 32px; padding: 32px 24px 24px; }
+  .corridor-stops { grid-template-columns: 1fr; }
+  .corridor-stops li { display: grid; grid-template-columns: 20px 1fr; gap: 24px; text-align: left; padding-bottom: 56px; }
+  .corridor-stops li:last-child { padding-bottom: 0; }
+  .corridor-node { margin: 0; }
+  .corridor-stops h3 { line-height: 1.2; font-size: 17px; }
+  .corridor-stops p { padding: 0; }
+  .corridor-stops li:not(:last-child)::before { top: 10px; left: 9px; width: 2px; height: 100%; }
+  .corridor-stops li:not(:last-child)::after { top: 65%; left: 10px; transform: translateX(-50%) rotate(135deg); }
+  .fleet-layout, .safety-introduction, .safety-layout { grid-template-columns: 1fr; }
+  .fleet-image .operations-image-frame { aspect-ratio: 4 / 3; }
+  .editorial-heading { font-size: clamp(34px, 7vw, 44px); }
+  .editorial-description { font-size: 14px; }
+  .safety-introduction { gap: 24px; margin-bottom: 32px; }
+  .safety-principles li { padding-block: 22px; }
+  .freight-quote-actions { width: 100%; flex-direction: column; }
+  .home-editorial .button { max-width: 100%; }
+}
