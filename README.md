@@ -1,32 +1,27 @@
-# React + TypeScript + Vite
+# Daneva website
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A React and TypeScript freight and logistics website with eight prerendered pages, a photo carousel, interactive regional map, and responsive enquiry forms. The project is frontend-only. Contact messages and freight quote requests use FormSubmit.
 
-Currently, two official plugins are available:
+## Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```sh
+npm ci
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Set the client-approved receiving email or activated FormSubmit token as `VITE_FORMSUBMIT_RECIPIENT` in `.env.local` and rebuild to enable submissions. Until the recipient is confirmed, forms allow enquiry preparation and direct visitors to the telephone contact. See [FormSubmit setup](docs/FORMSUBMIT.md).
+
+## Checks and builds
+
+- `npm test`: frontend validation, forms, submission, route and SEO tests.
+- `npm run build`: typecheck and prerender all pages to `dist/`.
+- `npm run preview`: serve the generated static site and security headers locally.
+- `npm run verify:built`: check generated HTML, assets, metadata, sitemap and headers.
+- `npm run test:browser`: browser and accessibility checks; set `CHROME_BIN` to an installed Chrome if needed. Form submissions are mocked.
+- `npm run build:production`: requires the approved HTTPS `VITE_SITE_URL`.
+- `npm run measure:build`: measure generated assets.
+- `npm run assets:prepare`: regenerate supplied-logo derivatives.
+- `npm run verify:deployment`: check the static Nginx template in an isolated container using an existing local Nginx image.
+
+A blank `VITE_SITE_URL` produces a noindex preview. Publish the generated `dist/` directory. See [static deployment](docs/DEPLOYMENT.md), [maps](docs/MAPS.md), and [launch checklist](LAUNCH_CHECKLIST.md).
+# daneva
