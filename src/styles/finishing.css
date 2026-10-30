@@ -1,0 +1,68 @@
+/* Shared finishing details for the editorial direction across every page. */
+.site-header { position: relative; z-index: 10; }
+.desktop-navigation a { transition: color .2s ease; }
+.desktop-navigation a::after { transition: background-color .2s ease; }
+.mobile-navigation { background: #f5f4f0; padding: clamp(24px, 5vw, 38px); }
+.mobile-nav-heading { border-bottom: 1px solid #c8d0d0; padding-bottom: 22px; }
+.mobile-nav-heading h2 { font-size: 24px; letter-spacing: -.04em; font-weight: 600; }
+.mobile-navigation nav a { padding: 17px 10px; font-size: 15px; }
+.mobile-navigation nav a.active { background: #e8e9e5; }
+.hero-image-note { color: #fff; background: #0b151f; padding: 7px 10px; line-height: 1.5; }
+.service-image { background: #273542; }
+.operations-image-frame { background: #e6e9e5; }
+.operations-image-placeholder { background: #e6e9e5; }
+.site-footer :focus-visible { outline-color: #fff; }
+.site-footer .footer-identity > p { max-width: 285px; }
+.internal-hero { position: relative; overflow: hidden; }
+.internal-hero::after { content: ''; position: absolute; right: 0; bottom: 0; width: min(30%, 350px); height: 3px; background: var(--color-brand); }
+.internal-hero-layout { position: relative; }
+.internal-breadcrumb { font-family: 'Courier New', monospace; letter-spacing: .03em; }
+.internal-hero--light { background: #f5f4f0; }
+.internal-hero--dark .internal-breadcrumb { color: #e1e9f3; }
+.internal-introduction { max-width: 680px; }
+.corporate-section { padding-block: clamp(76px, 8vw, 120px); }
+.corporate-section h2, .enterprise-cta h2 { font-size: clamp(36px, 4vw, 62px); line-height: 1.08; }
+.corporate-editorial--image { gap: clamp(48px, 8vw, 120px); }
+.corporate-image .operations-image-frame { aspect-ratio: 1.18; }
+.corporate-prose p, .corporate-purpose p, .corporate-presence p, .corporate-principles p { line-height: 1.85; }
+.corporate-highlights li { padding-block: 5px; }
+.corporate-purpose > div { border-top: 1px solid var(--color-brand); }
+.corporate-principles li { padding-block: 30px; }
+.corporate-principles h3, .corporate-purpose h3, .corporate-presence h3 { font-weight: 600; letter-spacing: -.025em; }
+.corporate-network .corridor-diagram { background: #eceeea; border-color: #d5ddd5; }
+.enterprise-cta { position: relative; overflow: hidden; }
+.enterprise-cta::before { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 3px; background: var(--color-brand); }
+.enterprise-cta .eyebrow { font-family: 'Courier New', monospace; font-weight: 400; }
+.enterprise-cta h2 { max-width: 680px; }
+.enquiry-section { background: #eeefeb; }
+.contact-layout { gap: clamp(48px, 7vw, 110px); }
+.contact-information h2, .enquiry-form h2 { font-weight: 600; letter-spacing: -.045em; }
+.contact-details > div { border-color: #c7d0ca; }
+.contact-details dt { font-family: 'Courier New', monospace; text-transform: uppercase; letter-spacing: .06em; font-size: 11px; }
+.enquiry-form { padding: clamp(26px, 4vw, 56px); border-color: #d1d9d3; border-top: 2px solid var(--color-brand); }
+.form-availability { background: #f0f2ef; }
+.form-field label { font-weight: 700; }
+.form-field input, .form-field select, .form-field textarea { border-color: #8b9896; border-radius: 0; }
+.form-field input:hover, .form-field select:hover, .form-field textarea:hover { border-color: #102B4E; }
+.quote-progress button { font-family: 'Courier New', monospace; }
+.quote-progress .is-current button { background: white; }
+.form-back-button { border-radius: 100px; }
+.page-shell { background: #f5f4f0; }
+
+@media (max-width: 1023px) {
+  .corporate-editorial--image { gap: 40px; }
+  .enterprise-cta-layout { gap: 36px; }
+}
+@media (max-width: 767px) {
+  .hero--immersive .hero-corridor { gap: 8px; }
+  .hero-image-note { font-size: 9px; padding: 3px 6px; }
+  .hero--immersive .hero-inner { padding-bottom: 140px; }
+  .corporate-section { padding-block: 72px; }
+  .corporate-section h2, .enterprise-cta h2 { font-size: clamp(34px, 8vw, 48px); }
+  .corporate-image .operations-image-frame { aspect-ratio: 4 / 3; }
+  .enquiry-form, .quote-form { padding: 26px 20px; }
+  .contact-layout { gap: 40px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .desktop-navigation a, .desktop-navigation a::after { transition: none; }
+}

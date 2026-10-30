@@ -2,15 +2,16 @@ import { useState } from 'react'
 import { assets } from '../../../config/assets'
 import { operationsPhotography } from '../../../data/home'
 
-export function OperationsImage({ className = '' }: { className?: string }) {
+export function OperationsImage({ className = '', variant = 'container' }: { className?: string; variant?: keyof typeof assets.trucks }) {
   const [failed, setFailed] = useState(false)
-  const hasImage = Boolean(assets.truck) && !failed
+  const truck = assets.trucks[variant]
+  const hasImage = Boolean(truck) && !failed
 
   return (
     <figure className={`operations-image ${className}`}>
       <div className="operations-image-frame">
         {hasImage ? (
-          <img src={assets.truck} alt={operationsPhotography.alt} loading="lazy" decoding="async" onError={() => setFailed(true)} />
+          <img src={truck} alt={`Illustrative generated ${variant === 'curtainside' ? 'curtain-side' : variant} truck concept in Daneva colours`} loading="lazy" decoding="async" onError={() => setFailed(true)} />
         ) : (
           <div className="operations-image-placeholder" role="note">
             <span className="image-placeholder-mark" aria-hidden="true" />
@@ -19,7 +20,7 @@ export function OperationsImage({ className = '' }: { className?: string }) {
           </div>
         )}
       </div>
-      <figcaption>{operationsPhotography.caption}</figcaption>
+      <figcaption>{hasImage ? operationsPhotography.caption : 'Company photography pending'}</figcaption>
     </figure>
   )
 }

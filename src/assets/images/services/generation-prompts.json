@@ -1,0 +1,17 @@
+{
+  "tool": "Built-in image_gen",
+  "images": [
+    {
+      "file": "haulage-highlands.jpg",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape website service photograph for Daneva East African logistics. Generate a premium realistic editorial photo of a white modern heavy tractor trailer driving along a sweeping paved highway in lush green Kenyan highlands, distant blue hills, morning light. Wide 3:2 landscape composition, entire truck visible in the right half, road curving from lower left, no close cropped cab. Truck has restrained red DANEVA text on trailer, no other lettering or logos. Deep natural greens, white and red truck, realistic road markings and proportions. Single photograph, no collage, no graphic overlays, no watermark."
+    },
+    {
+      "file": "container-terminal.jpg",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape website service photograph for Daneva containerised and bulk cargo. Generate a premium realistic editorial photo of a large industrial reach stacker carefully lifting a red shipping container in an East African inland freight terminal, stacked muted red and navy containers, neatly arranged palletised industrial cargo off to one side, two distant workers with high visibility vests and hard hats kept clear of lifting area, crisp daylight. Wide 3:2 landscape, strong distinct composition with lifting machinery and container as main subject, no hero truck or close-up cab. Realistic industrial equipment, safe operations, no readable text, no watermark, no collage."
+    },
+    {
+      "file": "port-clearing.jpg",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape website service photograph for Daneva Mombasa clearing and forwarding. Generate a premium realistic editorial photo of a Black East African female logistics professional in a white hard hat and navy workwear checking shipping documents on a clipboard beside a Black male port colleague wearing orange high visibility vest and hard hat, safely standing at a port office viewing platform, Mombasa shipping container port and gantry cranes visible behind them, warm afternoon coastal light. Wide 3:2 landscape, professionals in right two thirds, cranes visible left, natural candid professional scene. No close-up truck, no readable lettering or document text, no watermark, no collage."
+    }
+  ]
+}

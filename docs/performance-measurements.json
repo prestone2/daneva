@@ -1,0 +1,51 @@
+{
+  "baseline": {
+    "entry": {
+      "bytes": 457616,
+      "gzipBytes": 141740
+    },
+    "logo": 433021
+  },
+  "productionFixture": {
+    "entry": {
+      "bytes": 277587,
+      "gzipBytes": 87749
+    },
+    "homepageRequiredChunks": {
+      "files": 3,
+      "bytes": 291768,
+      "gzipBytes": 92320
+    },
+    "css": {
+      "bytes": 34993,
+      "gzipBytes": 7923
+    },
+    "logo400": {
+      "bytes": 19932,
+      "gzipBytes": 19960
+    },
+    "logo600": {
+      "bytes": 33606,
+      "gzipBytes": 33547
+    },
+    "social": {
+      "bytes": 62101,
+      "gzipBytes": 57382
+    },
+    "font": {
+      "bytes": 24836,
+      "gzipBytes": 24864
+    }
+  },
+  "followUpReview": {
+    "entry": { "bytes": 277680, "gzipBytes": 87797 },
+    "homepageRequiredChunks": { "files": 3, "bytes": 291861, "gzipBytes": 92369 },
+    "homepageHtml": { "bytes": 24457, "gzipBytes": 4923 },
+    "css": { "bytes": 34993, "gzipBytes": 7923 },
+    "sourceLogoSha256": "883976b2f595636d010bcb56f626cb1ecd6f3476e93337e9069b40fee4527d5e",
+    "socialDimensions": { "width": 1200, "height": 630 },
+    "command": "npm run measure:build",
+    "artifact": "configured synthetic domain, after standards-mode and URL validation fixes"
+  },
+  "notes": "Actual file/gzip measurements. Original baseline/productionFixture snapshots preserved; followUpReview is the freshly measured configured build. Synthetic SEO domain only. No Lighthouse, field Core Web Vitals or production latency claims."
+}

@@ -34,7 +34,7 @@
   .home-editorial .editorial-heading { margin-top: 20px; max-width: 600px; }
   .editorial-description { font-size: 15px; line-height: 1.9; color: #52647b; margin-top: 24px; max-width: 620px; }
   .operations-image { margin: 0; min-width: 0; }
-  .operations-image-frame { position: relative; overflow: hidden; background: #EAF2FA; aspect-ratio: 4 / 5; }
+  .operations-image-frame { position: relative; overflow: hidden; background: #EAF2FA; aspect-ratio: 3 / 2; }
   .operations-image-frame img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 65% center; }
   .operations-image-placeholder { height: 100%; display: flex; flex-direction: column; justify-content: center; padding: clamp(24px, 4vw, 56px); border: 1px solid #d1deeb; }
   .image-placeholder-mark { display: block; width: 40px; height: 3px; margin-bottom: 24px; background: var(--color-brand); }
@@ -72,7 +72,7 @@
   .about-capabilities { grid-template-columns: 1fr; gap: 12px; }
   .service-row { grid-template-columns: 28px 1fr 1fr 24px; gap: 20px; }
   .fleet-layout, .safety-introduction, .safety-layout { gap: 36px; }
-  .fleet-image .operations-image-frame { aspect-ratio: 3 / 5; }
+  .fleet-image .operations-image-frame { aspect-ratio: 3 / 2; }
   .freight-quote-layout { flex-direction: column; align-items: flex-start; gap: 32px; }
   .freight-quote-actions { flex-direction: row; flex-wrap: wrap; }
 }

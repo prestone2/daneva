@@ -1,0 +1,13 @@
+{
+  "tool": "Built-in imagegen",
+  "variants": [
+    {
+      "file": "daneva-tipper-generated.jpg",
+      "prompt": "Use case: ads-marketing. Generate one photorealistic landscape website image, 1536x1024. Subject: A white rugged 8x4 four-axle rigid tipper truck with a deep red steel tipping body carrying a modest load of gravel, body lowered, photographed in a spacious East African aggregates yard. Different truck model and silhouette from a standard box trailer. White cab with red #D32F2F and subtle navy #102B4E livery. Supporting reference image is the approved Daneva logo: use this exact red truck-symbol and wordmark prominently on cab doors and suitable white body panels. Exact text 'DANEVA' / 'COMPANY LIMITED'. Keep whole truck and entire trailer inside frame with generous margins, three-quarter front view, natural East African daylight, realistic working truck textures, believable wheels, shadows and load restraint, no people. No extra words, contact details, URLs, watermarks or collage. Generated brand concept image."
+    },
+    {
+      "file": "daneva-lowloader-generated.jpg",
+      "prompt": "Use case: ads-marketing. Generate one photorealistic landscape website image, 1536x1024. Subject: A white heavy-duty European cab-over tractor with a red low-loader trailer carrying one yellow tracked excavator with boom securely folded, credible chains and axle geometry, in a spacious East African industrial yard. Different truck model and silhouette from a standard box trailer. White cab with red #D32F2F and subtle navy #102B4E livery. Supporting reference image is the approved Daneva logo: use this exact red truck-symbol and wordmark prominently on cab doors and suitable white body panels. Exact text 'DANEVA' / 'COMPANY LIMITED'. Keep whole truck and entire trailer inside frame with generous margins, three-quarter front view, natural East African daylight, realistic working truck textures, believable wheels, shadows and load restraint, no people. No extra words, contact details, URLs, watermarks or collage. Generated brand concept image."
+    }
+  ]
+}

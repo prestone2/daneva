@@ -16,7 +16,7 @@ export function AboutPreviewSection() {
           </ul>
           <Button to={aboutContent.cta.to}>{aboutContent.cta.label}</Button>
         </div>
-        <OperationsImage className="about-image" />
+        <OperationsImage variant="delivery" className="about-image" />
       </Container>
     </section>
   )

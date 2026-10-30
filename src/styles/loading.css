@@ -1,0 +1,31 @@
+/* Loading states reflect real work; no artificial delay or percentage. */
+.page-loading { position: relative; isolation: isolate; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 45px; padding: 48px 24px; background: #f5f7fa; overflow: hidden; }
+.page-loading::before { content: ''; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse at 50% 35%,#fff 0%,#fff0 65%); }
+.page-loading::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: #c40016; }
+.page-loading-card { width: min(100%,440px); text-align: center; }
+.page-loading-logo { display: block; position: relative; overflow: hidden; width: 220px; height: 66px; margin: 0 auto 32px; background: #fff; border-radius: 6px; box-shadow: 0 5px 25px #061f3206; }
+.page-loading-logo img { position: absolute; width: 100%; height: auto; max-width: none; left: 0; top: 50%; transform: translateY(-50%); }
+.page-loading-eyebrow { font-size: 9px; font-weight: 800; color: #a90015; letter-spacing: .19em; }
+.page-loading h2 { font-size: clamp(25px,4vw,34px); font-weight: 800; line-height: 1.2; letter-spacing: -.045em; color: #0a2033; margin: 13px 0 0; }
+.page-loading-card > p { color: #52647b; font-size: 12px; line-height: 1.8; margin-top: 11px; }
+.loading-route { height: 53px; position: relative; margin: 26px 18px 0; display: flex; align-items: flex-end; justify-content: space-between; padding-bottom: 4px; }
+.loading-route-line { position: absolute; left: 0; right: 0; bottom: 8px; height: 1px; background: repeating-linear-gradient(90deg,#b3c0cd 0 5px,transparent 5px 10px); }
+.loading-route i { display: block; position: relative; height: 9px; width: 9px; border: 2px solid #c40016; border-radius: 50%; background: #fff; }
+.loading-route-truck { position: absolute; left: 0; bottom: 16px; width: 35px; height: 34px; display: grid; place-items: center; color: #c40016; animation: freight-loading 2.8s cubic-bezier(.45,0,.55,1) infinite; }
+.loading-route-labels { display: flex; justify-content: space-between; margin: 9px 0 0; color: #435365; font-size: 9px; font-weight: 700; }
+.page-loading-status { display: inline-flex; align-items: center; gap: 9px; margin-top: 28px; color: #52647b; font-size: 10px; }
+.loading-spinner { display: inline-block; width: 15px; height: 15px; flex-shrink: 0; border: 2px solid #dfe5eb; border-top-color: #bd0017; border-radius: 50%; animation: loading-spin .8s linear infinite; }
+.page-loading-skeleton { width: min(100%,670px); display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 15px; opacity: .65; }
+.page-loading-skeleton > div { height: 64px; border: 1px solid #e3e8ef; border-radius: 6px; background: linear-gradient(110deg,#edf1f5 25%,#fafbfc 45%,#edf1f5 65%); background-size: 250% 100%; animation: loading-shimmer 2.2s ease-in-out infinite; }
+.page-loading-skeleton > div:nth-child(2) { animation-delay: .12s; }
+.page-loading-skeleton > div:nth-child(3) { animation-delay: .24s; }
+.corridor-map-loading { top: 50%; left: 50%; width: max-content; max-width: calc(100% - 32px); transform: translate(-50%,-70%); z-index: 450; display: flex; align-items: center; flex-direction: column; gap: 9px; padding: 19px 24px; border: 1px solid #e0e5eb; background: #fffffff5; border-radius: 7px; box-shadow: 0 8px 30px #061f3210; text-align: center; }
+.corridor-map-loading .loading-spinner { width: 21px; height: 21px; }
+.corridor-map-loading strong { font-size: 12px; color: #0a2033; }
+.corridor-map-loading > span:last-child { font-size: 9px; color: #52647b; }
+.enquiry-form[aria-busy='true'] button[type='submit']::before { content: ''; display: inline-block; width: 14px; height: 14px; border: 2px solid #ffffff70; border-top-color: #fff; border-radius: 50%; animation: loading-spin .8s linear infinite; }
+@keyframes loading-spin { to { transform: rotate(360deg); } }
+@keyframes freight-loading { 0% { left: 0; opacity: 0; } 8% { opacity: 1; } 85% { opacity: 1; } 100% { left: calc(100% - 35px); opacity: 0; } }
+@keyframes loading-shimmer { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+@media (max-width: 767px) { .page-loading { padding: 36px 24px; gap: 35px; } .page-loading-logo { width: 195px; height: 59px; margin-bottom: 26px; } .page-loading-skeleton { gap: 9px; } .page-loading-skeleton > div { height: 48px; } }
+@media (prefers-reduced-motion: reduce) { .loading-spinner, .loading-route-truck, .page-loading-skeleton > div, .enquiry-form[aria-busy='true'] button[type='submit']::before { animation: none; } .loading-route-truck { left: calc(50% - 17px); opacity: 1; } }

@@ -1,0 +1,12 @@
+{
+  "browser": "156.0.8078.47",
+  "routeViewportChecks": 81,
+  "standardsModeVerified": true,
+  "axeScans": 23,
+  "javascriptDisabledRoutes": 8,
+  "configuredFormsTested": true,
+  "runtimeErrors": [],
+  "cspConsoleErrors": [],
+  "unexpectedExternalRequests": [],
+  "violations": []
+}

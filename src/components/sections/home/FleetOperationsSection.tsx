@@ -7,7 +7,7 @@ export function FleetOperationsSection() {
   return (
     <section className="home-editorial fleet-section" aria-labelledby="fleet-heading">
       <Container className="fleet-layout">
-        <OperationsImage className="fleet-image" />
+        <OperationsImage variant="curtainside" className="fleet-image" />
         <div className="editorial-copy">
           <p className="eyebrow editorial-eyebrow">{fleetContent.eyebrow}</p>
           <h2 id="fleet-heading" className="editorial-heading">{fleetContent.heading}</h2>

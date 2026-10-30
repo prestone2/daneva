@@ -4,7 +4,7 @@ import { footerContent, footerGroups } from '../../data/footer'
 import { Container } from '../ui/Container'
 import { Brand } from './Brand'
 
-const currentYear = new Date().getFullYear()
+const currentYear = Number(import.meta.env.BUILD_YEAR) || new Date().getUTCFullYear()
 
 export function Footer() {
   return (
@@ -25,6 +25,7 @@ export function Footer() {
             ))}
           </nav>
         </div>
+        <div className="footer-wordmark" aria-hidden="true">DANEVA<span>↗</span></div>
         <div className="footer-bottom"><p>© {currentYear} {footerContent.copyright}</p><span>{footerContent.region}</span></div>
       </Container>
     </footer>

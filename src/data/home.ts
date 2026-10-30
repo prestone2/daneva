@@ -2,7 +2,7 @@ import type { AboutContent, CorridorContent, EditorialContent, QuoteContent, Ser
 
 export const aboutContent: AboutContent = {
   eyebrow: 'ABOUT DANEVA',
-  heading: 'Built to Keep Trade Moving.',
+  heading: 'About Daneva',
   description: "Daneva Co. Limited provides long-distance haulage and clearing services connecting Mombasa and Nairobi with Kampala's inland container depots. With operations in Kenya and Uganda, the company supports the cross-border movement of containerised and bulk cargo.",
   capabilities: ['Kenya–Uganda Freight', 'Containerised Cargo', 'Bulk Cargo Transport', 'Mombasa Customs Clearing'],
   cta: { label: 'Discover Daneva', to: '/about' },
@@ -27,13 +27,13 @@ export const corridorContent: CorridorContent = {
     { city: 'KAMPALA', role: 'Inland Container Depots' },
   ],
   diagramLabel: 'Freight corridor from Mombasa through Nairobi to Kampala',
-  caption: 'Route schematic · Not a geographically accurate map.',
+  caption: 'OpenStreetMap · Mombasa, Nairobi and Kampala.',
   cta: { label: 'Explore Transport Corridors', to: '/transport-corridors' },
 }
 
 export const fleetContent: EditorialContent = {
   eyebrow: 'FLEET & OPERATIONS',
-  heading: 'Reliability Behind Every Journey.',
+  heading: 'Fleet & Operations',
   description: 'Successful long-distance haulage depends on vehicle readiness, experienced drivers, and coordinated transport operations. Daneva brings these elements together to support cargo movement between Kenya and Uganda.',
   cta: { label: 'Explore Fleet & Operations', to: '/fleet-operations' },
   features: [
@@ -65,8 +65,8 @@ export const quoteContent: QuoteContent = {
 }
 
 export const operationsPhotography = {
-  alt: 'Daneva company haulage truck',
+  alt: 'Generated illustration of a navy and red haulage truck with Daneva branding',
   placeholderTitle: 'Company photography pending',
   placeholderDescription: 'A supplied Daneva truck photograph will appear here.',
-  caption: 'Kenya–Uganda freight operations',
+  caption: 'Illustrative generated truck concept · Company photography pending',
 }

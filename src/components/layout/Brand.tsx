@@ -1,21 +1,6 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { assets } from '../../config/assets'
 
 export function Brand() {
-  const [failed, setFailed] = useState(false)
-  return (
-    <Link to="/" className="brand" aria-label="Daneva Co. Limited — home">
-      {!failed ? (
-        <span className="brand-art">
-          <img src={assets.logo} alt="Daneva Co. Limited" width="2000" height="2000" onError={() => setFailed(true)} />
-        </span>
-      ) : (
-        <>
-          <span className="brand-name">DANEVA<span>CO. LIMITED</span></span>
-          <span className="brand-note">Logo placeholder · asset pending</span>
-        </>
-      )}
-    </Link>
-  )
+  return <Link to="/" className="brand" aria-label="Daneva Co. Limited — home"><span className="brand-art"><img src={assets.logo} srcSet={assets.logoSrcSet} sizes="(max-width: 767px) 155px, 190px" alt="Daneva Company Limited" width="400" height="400" decoding="async" /></span></Link>
 }

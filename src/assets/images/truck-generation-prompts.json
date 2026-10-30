@@ -1,0 +1,23 @@
+{
+  "tool": "Built-in imagegen",
+  "reference": "User-supplied real Daneva truck photograph; approved red logo",
+  "sharedPrompt": "Photorealistic standalone 1536x1024 landscape website image. Predominantly white cab with red Daneva truck-symbol logo, exact DANEVA / COMPANY LIMITED lettering and navy accents, natural East African daylight, realistic wheels and working vehicle textures. Whole vehicle in frame, no people, no contact details, slogans or watermarks. Generated fleet concept.",
+  "variants": [
+    {
+      "file": "daneva-container-generated.jpg",
+      "subject": "A white Mercedes Actros-style 6x4 tractor pulling a long corrugated white shipping container on a skeletal trailer, matching the practical truck proportions and red branding placement in the supplied real truck photograph. Three-quarter front view in a spacious East African logistics yard."
+    },
+    {
+      "file": "daneva-curtainside-generated.jpg",
+      "subject": "A white high-roof European cab-over 6x2 tractor pulling a long deep navy curtain-side trailer with restrained red trim, taut fabric curtains and realistic buckles. Three-quarter front view at a clean East African warehouse loading yard."
+    },
+    {
+      "file": "daneva-flatbed-generated.jpg",
+      "subject": "A white rugged European cab-over 6x4 tractor pulling a long open flatbed trailer carrying neatly secured bundled steel beams, correct chains and straps. Red chassis accents. Three-quarter front-side view in an East African industrial freight yard."
+    },
+    {
+      "file": "daneva-delivery-generated.jpg",
+      "subject": "A smaller white Japanese-style medium-duty cab-over rigid delivery truck, two axles, enclosed white cargo box, red lower trim and a subtle navy stripe. Clearly different scale and cab shape from the articulated trucks. Three-quarter front view at an East African commercial warehouse."
+    }
+  ]
+}
