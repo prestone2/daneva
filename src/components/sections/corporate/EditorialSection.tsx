@@ -16,7 +16,7 @@ export function EditorialSection({ content, image = false, reverse = false, quot
           {content.note && <p className="corporate-note">{content.note}</p>}
           {quote && <Button to={enterpriseCTA.primary.to}>{enterpriseCTA.primary.label}</Button>}
         </div>
-        {image && <OperationsImage className="corporate-image" variant={content.id === 'vehicle-maintenance' ? 'delivery' : content.id === 'fleet-operations' ? 'curtainside' : 'container'} />}
+        {image && <OperationsImage className="corporate-image" variant={content.id === 'vehicle-maintenance' ? 'blueTruck' : content.id === 'fleet-operations' ? 'fleet' : 'container'} />}
       </Container>
     </section>
   )

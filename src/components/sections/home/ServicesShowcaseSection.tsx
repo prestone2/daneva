@@ -19,7 +19,7 @@ export function ServicesShowcaseSection() {
             </a></li>
           })}
         </ol>
-        <p className="service-imagery-note">Illustrative service imagery.</p>
+        <p className="service-imagery-note">Daneva fleet and yard · Client-supplied photography.</p>
       </Container>
     </section>
   )

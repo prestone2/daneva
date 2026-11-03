@@ -80,3 +80,11 @@
   .enterprise-cta-actions { flex-direction: column; }
   .corporate-copy > .button { max-width: 100%; }
 }
+
+.fleet-gallery-intro { max-width: 640px; color: var(--color-slate); margin: 18px 0 32px; line-height: 1.75; }
+.fleet-photo-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.fleet-photo-gallery figure { margin: 0; min-width: 0; }
+.fleet-photo-gallery img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; }
+.fleet-photo-gallery figcaption { padding-top: 12px; font-size: .875rem; color: var(--color-slate); }
+@media (max-width: 900px) { .fleet-photo-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; } }
+@media (max-width: 540px) { .fleet-photo-gallery { grid-template-columns: 1fr; } }

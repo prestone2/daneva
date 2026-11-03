@@ -1,29 +1,27 @@
+import container from '../assets/images/client/container.webp'
+import fleet from '../assets/images/client/fleet.webp'
+import lineup from '../assets/images/client/lineup.webp'
+import blueTruck from '../assets/images/client/blueTruck.webp'
+import yard from '../assets/images/client/yard.webp'
+import prepared from '../assets/images/client/prepared.webp'
+import wideFleet from '../assets/images/client/wideFleet.webp'
+import containerSide from '../assets/images/client/containerSide.webp'
 
-// User-approved generated brand concept imagery; replace with fleet photography when available.
-const files = import.meta.glob<string>(
-  [
-    '/src/assets/images/daneva-container-generated.jpg',
-    '/src/assets/images/daneva-curtainside-generated.jpg',
-    '/src/assets/images/daneva-flatbed-generated.jpg',
-    '/src/assets/images/daneva-delivery-generated.jpg',
-    '/src/assets/images/daneva-tipper-generated.jpg',
-    '/src/assets/images/daneva-lowloader-generated.jpg',
-    '/src/assets/images/daneva-truck-generated.jpg',
-  ],
-  { eager: true, query: '?url', import: 'default' },
-)
+// Optimised derivatives of client-supplied Daneva fleet photography.
+export const photography = {
+  container: { src: container, alt: 'Blue Daneva truck with a white Daneva-branded container trailer' },
+  fleet: { src: fleet, alt: 'Daneva freight trucks lined up in the fleet yard' },
+  lineup: { src: lineup, alt: 'A row of Daneva trucks photographed from the front' },
+  blueTruck: { src: blueTruck, alt: 'Blue Daneva Mercedes-Benz truck and container trailer' },
+  yard: { src: yard, alt: 'Wide view of the Daneva yard with trucks and container trailers' },
+  prepared: { src: prepared, alt: 'White Daneva truck cabs parked alongside one another' },
+  wideFleet: { src: wideFleet, alt: 'Daneva fleet parked across the transport yard' },
+  containerSide: { src: containerSide, alt: 'White Daneva truck with a branded container trailer in the yard' },
+}
 
 export const assets = {
-  truck: files['/src/assets/images/daneva-container-generated.jpg'],
-  trucks: {
-    container: files['/src/assets/images/daneva-container-generated.jpg'],
-    curtainside: files['/src/assets/images/daneva-curtainside-generated.jpg'],
-    flatbed: files['/src/assets/images/daneva-flatbed-generated.jpg'],
-    delivery: files['/src/assets/images/daneva-delivery-generated.jpg'],
-    tipper: files['/src/assets/images/daneva-tipper-generated.jpg'],
-    lowloader: files['/src/assets/images/daneva-lowloader-generated.jpg'],
-    general: files['/src/assets/images/daneva-truck-generated.jpg'],
-  },
+  truck: container,
+  trucks: { container, fleet, lineup, blueTruck, yard, prepared, wideFleet, containerSide },
   logo: '/brand/daneva-logo-400.webp',
   logoSrcSet: '/brand/daneva-logo-400.webp 400w, /brand/daneva-logo-600.webp 600w',
 }

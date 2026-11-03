@@ -16,7 +16,7 @@ export function SafetyComplianceSection() {
         </div>
         <div className="safety-layout">
           <div className="safety-visual">
-            <OperationsImage variant="flatbed" className="safety-image" />
+            <OperationsImage variant="lineup" className="safety-image" />
             <Button to={safetyContent.cta.to}>{safetyContent.cta.label}</Button>
           </div>
           <ol className="safety-principles">

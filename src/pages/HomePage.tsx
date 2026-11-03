@@ -22,9 +22,11 @@ export function HomePage() {
       <FreightProcessSection />
       <TransportCorridorSection />
       <DestinationsSection />
-      <FleetOperationsSection />
-      <ClearingSupportSection />
-      <SafetyComplianceSection />
+      <div className="operations-stack">
+        <FleetOperationsSection />
+        <ClearingSupportSection />
+        <SafetyComplianceSection />
+      </div>
       <HomeFAQSection />
       <ShipmentChecklistSection />
       <EnterpriseCTA />

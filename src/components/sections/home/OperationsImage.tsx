@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { assets } from '../../../config/assets'
+import { assets, photography } from '../../../config/assets'
 import { operationsPhotography } from '../../../data/home'
 
 export function OperationsImage({ className = '', variant = 'container' }: { className?: string; variant?: keyof typeof assets.trucks }) {
@@ -11,7 +11,7 @@ export function OperationsImage({ className = '', variant = 'container' }: { cla
     <figure className={`operations-image ${className}`}>
       <div className="operations-image-frame">
         {hasImage ? (
-          <img src={truck} alt={`Illustrative generated ${variant === 'curtainside' ? 'curtain-side' : variant} truck concept in Daneva colours`} loading="lazy" decoding="async" onError={() => setFailed(true)} />
+          <img src={truck} alt={photography[variant].alt} loading="lazy" decoding="async" onError={() => setFailed(true)} />
         ) : (
           <div className="operations-image-placeholder" role="note">
             <span className="image-placeholder-mark" aria-hidden="true" />
@@ -20,7 +20,7 @@ export function OperationsImage({ className = '', variant = 'container' }: { cla
           </div>
         )}
       </div>
-      <figcaption>{hasImage ? operationsPhotography.caption : 'Company photography pending'}</figcaption>
+      <figcaption>{hasImage ? operationsPhotography.caption : 'Daneva fleet photography'}</figcaption>
     </figure>
   )
 }

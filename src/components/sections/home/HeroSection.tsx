@@ -9,7 +9,7 @@ const slides = [
   { image: serviceVisuals[0].src, alt: serviceVisuals[0].alt, label: 'FREIGHT THAT CONNECTS', title: 'Reliable Freight', line: 'Solutions Across', accent: 'East Africa', description: 'Connecting businesses to opportunities with safe, efficient and compliant transport and logistics services.', link: '/services', linkLabel: 'Explore Our Services', tag: 'Containerised & bulk cargo', position: '65% center' },
   { image: serviceVisuals[1].src, alt: serviceVisuals[1].alt, label: 'BORDER TO BORDER', title: 'From the Coast.', line: 'To Your Next', accent: 'Destination.', description: 'Connecting Mombasa, Nairobi and Kampala through coordinated long-distance haulage and regional freight planning.', link: '/transport-corridors', linkLabel: 'Discover Our Routes', tag: 'Kenya–Uganda connections', position: '68% center' },
   { image: serviceVisuals[2].src, alt: serviceVisuals[2].alt, label: 'ONE CONNECTED JOURNEY', title: 'Your Cargo.', line: 'Our Attention.', accent: 'Every Journey.', description: 'Cargo details, handling requirements and route planning brought together for your containerised and bulk freight.', link: '/fleet-operations', linkLabel: 'Meet Our Operations', tag: 'Prepared for the road ahead', position: '65% center' },
-  { image: assets.trucks.delivery, alt: 'Illustrative Daneva delivery truck at a logistics depot', label: 'LET’S KEEP TRADE MOVING', title: 'Your Business.', line: 'Connected to', accent: 'Opportunity.', description: 'Tell us what you need to move. Our team can discuss your transport, collection, delivery and clearing requirements.', link: '/contact', linkLabel: 'Talk to Our Team', tag: 'A conversation starts the journey', position: '65% center' },
+  { image: assets.trucks.blueTruck, alt: 'Blue Daneva truck with a branded container trailer in the yard', label: 'LET’S KEEP TRADE MOVING', title: 'Your Business.', line: 'Connected to', accent: 'Opportunity.', description: 'Tell us what you need to move. Our team can discuss your transport, collection, delivery and clearing requirements.', link: '/contact', linkLabel: 'Talk to Our Team', tag: 'A conversation starts the journey', position: '65% center' },
 ]
 
 export function HeroSection() {
@@ -47,7 +47,7 @@ export function HeroSection() {
       if (Math.abs(distance) > 55) goTo(active + (distance > 0 ? 1 : -1))
       touchStart.current = null
     }}>
-      <div className="carousel-images" aria-hidden="true">{slides.map((item, index) => <img key={item.image} className={`carousel-photo carousel-photo--${index} ${index === active ? 'is-active' : ''}`} src={item.image} alt=""  fetchPriority={index === 0 ? 'high' : 'auto'} loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />)}</div>
+      <div className="carousel-images" aria-hidden="true">{slides.map((item, index) => <img key={item.image} className={`carousel-photo carousel-photo--${index} ${index === active ? 'is-active' : ''}`} src={item.image} alt="" fetchPriority={index === 0 ? 'high' : 'auto'} loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />)}</div>
       <div className="hero-overlay" aria-hidden="true" />
       <div className="carousel-decoration" aria-hidden="true" />
       <Container className="hero-inner">
@@ -60,7 +60,6 @@ export function HeroSection() {
         <div className="carousel-image-tag"><span aria-hidden="true" />{slide.tag}</div>
         <div className="carousel-bottom">
           <div className="carousel-route"><MapPin size={16} aria-hidden="true" /><span>Mombasa <i aria-hidden="true">/</i> Nairobi <i aria-hidden="true">/</i> Kampala</span></div>
-
         </div>
         <span className="sr-only">{slide.alt}</span>
       </Container>

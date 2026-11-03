@@ -6,13 +6,13 @@ import type { InternalHeroContent } from '../../../types/corporate'
 import { Container } from '../../ui/Container'
 
 const bannerImages: Record<string, { src: string; position: string; label: string }> = {
-  'About Us': { src: assets.trucks.general, position: '65% 48%', label: 'THE PEOPLE BEHIND THE JOURNEY' },
+  'About Us': { src: assets.trucks.wideFleet, position: '65% 48%', label: 'THE PEOPLE BEHIND THE JOURNEY' },
   Services: { src: serviceVisuals[1].src, position: '65% 50%', label: 'TRANSPORT. CLEARING. CONNECTIONS.' },
   'Transport Corridors': { src: serviceVisuals[0].src, position: '60% 52%', label: 'MOMBASA / NAIROBI / KAMPALA' },
-  'Fleet & Operations': { src: assets.trucks.curtainside, position: '70% 50%', label: 'PREPARED FOR THE ROAD AHEAD' },
-  'Safety & Compliance': { src: assets.trucks.tipper, position: '68% 50%', label: 'CARE AT EVERY STAGE' },
-  Contact: { src: assets.trucks.delivery, position: '65% 48%', label: 'LET’S START A CONVERSATION' },
-  'Request a Quote': { src: assets.trucks.lowloader, position: '65% 53%', label: 'YOUR NEXT JOURNEY STARTS HERE' },
+  'Fleet & Operations': { src: assets.trucks.fleet, position: '70% 50%', label: 'PREPARED FOR THE ROAD AHEAD' },
+  'Safety & Compliance': { src: assets.trucks.prepared, position: '68% 50%', label: 'CARE AT EVERY STAGE' },
+  Contact: { src: assets.trucks.blueTruck, position: '65% 48%', label: 'LET’S START A CONVERSATION' },
+  'Request a Quote': { src: assets.trucks.yard, position: '65% 53%', label: 'YOUR NEXT JOURNEY STARTS HERE' },
 }
 
 export function InternalPageHero({ content, variant = 'dark', image }: { content: InternalHeroContent; variant?: 'dark' | 'light'; image?: ReactNode }) {

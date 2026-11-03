@@ -7,7 +7,7 @@ export function AboutPreviewSection() {
   return (
     <section className="home-editorial about-section" aria-labelledby="about-heading">
       <Container className="about-layout">
-        <div className="editorial-copy">
+        <div className="editorial-copy"><span className="editorial-section-index" aria-hidden="true">01 / MEET DANEVA</span>
           <p className="eyebrow editorial-eyebrow">{aboutContent.eyebrow}</p>
           <h2 id="about-heading" className="editorial-heading">{aboutContent.heading}</h2>
           <p className="editorial-description">{aboutContent.description}</p>
@@ -16,7 +16,7 @@ export function AboutPreviewSection() {
           </ul>
           <Button to={aboutContent.cta.to}>{aboutContent.cta.label}</Button>
         </div>
-        <OperationsImage variant="delivery" className="about-image" />
+        <OperationsImage variant="blueTruck" className="about-image" />
       </Container>
     </section>
   )

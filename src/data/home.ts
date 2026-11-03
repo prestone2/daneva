@@ -65,8 +65,8 @@ export const quoteContent: QuoteContent = {
 }
 
 export const operationsPhotography = {
-  alt: 'Generated illustration of a navy and red haulage truck with Daneva branding',
-  placeholderTitle: 'Company photography pending',
+  alt: 'Daneva truck photographed in the fleet yard',
+  placeholderTitle: 'Daneva fleet photography',
   placeholderDescription: 'A supplied Daneva truck photograph will appear here.',
-  caption: 'Illustrative generated truck concept · Company photography pending',
+  caption: 'Daneva fleet · Client-supplied photography',
 }

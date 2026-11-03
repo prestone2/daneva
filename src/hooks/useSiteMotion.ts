@@ -31,7 +31,7 @@ export function useSiteMotion(pathname: string) {
       observer?.unobserve(element)
     }
     function register(element: HTMLElement) {
-      if (elements.has(element) || preference.matches) return
+      if (elements.has(element) || preference.matches || element.closest('.operations-stack')) return
       elements.add(element)
       const siblings = Array.from(element.parentElement?.children ?? []).filter(child => child.matches(revealSelectors))
       const image = element.matches('figure,.about-image,.fleet-image,.safety-visual,.service-detail-visual')
