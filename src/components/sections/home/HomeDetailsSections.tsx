@@ -1,7 +1,8 @@
+import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Boxes, Check, ChevronDown, ClipboardList, Container as ContainerIcon, FileCheck2, MapPin, MessagesSquare, PackageCheck, Route, Truck } from 'lucide-react'
 import { Container } from '../../ui/Container'
 import { Button } from '../../ui/Button'
-import { serviceVisuals } from '../../../config/service-assets'
+import portClearing from '../../../assets/images/services/port-clearing.jpg'
 
 const cargoTypes = [
   { icon: ContainerIcon, title: 'Containerised cargo', description: 'Coordinated transport for containerised shipments moving from the coast to inland destinations.', points: ['Port and collection arrangements', 'Container and load information', 'Destination handling requirements'] },
@@ -20,12 +21,26 @@ const steps = [
 ]
 const stepLabels = ['THE ENQUIRY', 'THE PLAN', 'THE PREPARATION', 'THE CONNECTION']
 export function FreightProcessSection() {
+  const journeyRef = useRef<HTMLOListElement>(null)
+  const [activeStep, setActiveStep] = useState(0)
+  function showStep(index: number) {
+    const list = journeyRef.current
+    const card = list?.children[index] as HTMLElement | undefined
+    if (list && card) list.scrollTo({ left: card.offsetLeft - (list.children[0] as HTMLElement).offsetLeft, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })
+  }
   return <section className="home-details freight-process-section" aria-labelledby="process-heading"><Container>
     <div className="freight-journey-heading"><div className="home-details-heading"><span className="home-section-label">HOW IT WORKS</span><h2 id="process-heading">Your cargo. A clear way forward.</h2><p>Four connected steps, with the right conversations at every stage.</p></div><div className="freight-journey-intro"><Route size={22} aria-hidden="true" /><span>From the first conversation<br /><strong>to the onward journey.</strong></span></div></div>
-    <ol className="freight-journey" role="list">{steps.map(({ icon: Icon, title, text }, index) => <li key={title}>
+    <ol className="freight-journey" role="list" ref={journeyRef} tabIndex={0} aria-label="Shipment planning steps" onScroll={event => {
+      const list = event.currentTarget
+      const first = list.children[0] as HTMLElement
+      const second = list.children[1] as HTMLElement
+      const distance = second.offsetLeft - first.offsetLeft
+      if (distance > 0) setActiveStep(Math.min(steps.length - 1, Math.max(0, Math.round(list.scrollLeft / distance))))
+    }}>{steps.map(({ icon: Icon, title, text }, index) => <li key={title}>
       <span className="journey-stop" aria-hidden="true" /><div className="journey-card"><div className="journey-card-top"><span className="journey-icon"><Icon size={26} strokeWidth={1.6} aria-hidden="true" /></span><span className="journey-number" aria-hidden="true">0{index + 1}</span></div><span className="journey-label">{stepLabels[index]}</span><h3>{title}</h3><p>{text}</p><span className="journey-card-rule" aria-hidden="true" /></div>
       {index < steps.length - 1 && <span className="journey-next" aria-hidden="true"><ArrowRight size={16} /></span>}
     </li>)}</ol>
+    <div className="journey-carousel-navigation"><span>Swipe to explore</span><div aria-label="Choose a planning step">{steps.map((step, index) => <button type="button" key={step.title} aria-label={`Show step ${index + 1}: ${step.title}`} aria-current={activeStep === index ? 'step' : undefined} onClick={() => showStep(index)}><span /></button>)}</div><span aria-live="polite">{activeStep + 1} / {steps.length}</span></div>
     <div className="freight-journey-bottom"><p><span aria-hidden="true" />Every journey starts with understanding your shipment.</p><Button to="/request-quote">Let’s Plan Your Shipment</Button></div>
   </Container></section>
 }
@@ -36,11 +51,50 @@ const destinations = [
   { city: 'Kampala', country: 'UGANDA · INLAND CONNECTION', description: 'Connections to inland container depots and receiving arrangements in Uganda.', tags: 'Inland depots · Destination handling · Delivery' },
 ]
 export function DestinationsSection() {
-  return <section className="home-details home-details--navy" aria-labelledby="destinations-heading"><Container><div className="home-details-heading"><span className="home-section-label">REGIONAL CONNECTIONS</span><h2 id="destinations-heading">Three cities at the heart of the journey.</h2><p>Connecting the coast with the businesses and logistics destinations that depend on regional trade.</p></div><div className="home-detail-cards">{destinations.map(({ city, country, description, tags }) => <article className="destination-card" key={city}><MapPin aria-hidden="true" /><span>{country}</span><h3>{city}</h3><p>{description}</p><small>{tags}</small></article>)}</div><div className="home-section-action"><Button to="/transport-corridors">View Transport Corridors</Button></div></Container></section>
+  const trackRef = useRef<HTMLDivElement>(null)
+  const [active, setActive] = useState(0)
+  const [paused, setPaused] = useState(false)
+  const [visible, setVisible] = useState(false)
+  const [automatic, setAutomatic] = useState(false)
+
+  useEffect(() => {
+    const mobile = window.matchMedia('(max-width: 767px)')
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)')
+    function configure() { setAutomatic(mobile.matches && !reduced.matches) }
+    configure()
+    mobile.addEventListener('change', configure)
+    reduced.addEventListener('change', configure)
+    const observer = new IntersectionObserver(entries => setVisible(entries[0].isIntersecting), { threshold: .5 })
+    if (trackRef.current) observer.observe(trackRef.current)
+    return () => { mobile.removeEventListener('change', configure); reduced.removeEventListener('change', configure); observer.disconnect() }
+  }, [])
+
+  function showCity(index: number) {
+    const track = trackRef.current
+    const card = track?.children[index] as HTMLElement | undefined
+    if (track && card) track.scrollTo({ left: card.offsetLeft - (track.children[0] as HTMLElement).offsetLeft, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })
+  }
+
+  useEffect(() => {
+    if (!automatic || paused || !visible) return
+    const timer = window.setInterval(() => { if (!document.hidden) showCity((active + 1) % destinations.length) }, 5000)
+    return () => window.clearInterval(timer)
+  }, [active, automatic, paused, visible])
+
+  return <section className="home-details home-details--navy destinations-section" aria-labelledby="destinations-heading"><Container>
+    <div className="home-details-heading"><span className="home-section-label">REGIONAL CONNECTIONS</span><h2 id="destinations-heading">Three cities at the heart of the journey.</h2><p>Connecting the coast with the businesses and logistics destinations that depend on regional trade.</p></div>
+    <div className="home-detail-cards destination-carousel" ref={trackRef} tabIndex={0} aria-label="Regional freight destinations" onTouchStart={() => setPaused(true)} onPointerDown={() => setPaused(true)} onFocusCapture={() => setPaused(true)} onScroll={event => {
+      const track = event.currentTarget
+      const distance = (track.children[1] as HTMLElement).offsetLeft - (track.children[0] as HTMLElement).offsetLeft
+      if (distance > 0) setActive(Math.min(destinations.length - 1, Math.max(0, Math.round(track.scrollLeft / distance))))
+    }}>{destinations.map(({ city, country, description, tags }) => <article className="destination-card" key={city}><MapPin aria-hidden="true" /><span>{country}</span><h3>{city}</h3><p>{description}</p><small>{tags}</small></article>)}</div>
+    <div className="destination-carousel-controls"><span>{active + 1} / {destinations.length}</span><div aria-label="Choose a destination">{destinations.map(({city}, index) => <button type="button" key={city} aria-label={`Show ${city}`} aria-current={active === index ? 'true' : undefined} onClick={() => { setPaused(true); showCity(index) }}><span /></button>)}</div>{automatic ? <button type="button" className="destination-play" onClick={() => setPaused(value => !value)} aria-label={paused ? 'Resume city carousel' : 'Pause city carousel'}>{paused ? 'Play' : 'Pause'}</button> : <span>Swipe to explore</span>}</div>
+    <div className="home-section-action"><Button to="/transport-corridors">View Transport Corridors</Button></div>
+  </Container></section>
 }
 
 export function ClearingSupportSection() {
-  return <section className="home-details" aria-labelledby="clearing-heading"><Container className="home-clearing-layout"><figure className="operations-image"><div className="operations-image-frame"><img src={serviceVisuals[2].src} alt={serviceVisuals[2].alt} loading="lazy" decoding="async" /></div></figure><div><span className="home-section-label">CLEARING & FORWARDING</span><h2 id="clearing-heading">Connect port arrival with the road ahead.</h2><p>Cargo arriving through Mombasa needs more than onward transport. Documentation, port processes and release requirements all form part of the journey.</p><p>Daneva brings clearing and transport discussions together to help prepare containerised and bulk cargo for inland movement.</p><ul className="home-check-list">{['Customs documentation coordination', 'Port process and cargo release requirements', 'Onward transport planning'].map(item => <li key={item}><Check aria-hidden="true" />{item}</li>)}</ul><Button to="/services#mombasa-clearing">Learn About Clearing</Button></div></Container></section>
+  return <section className="home-details" aria-labelledby="clearing-heading"><Container className="home-clearing-layout"><figure className="operations-image"><div className="operations-image-frame"><img src={portClearing} alt="Illustration of logistics professionals reviewing shipping documents overlooking a port" loading="lazy" decoding="async" /></div></figure><div><span className="home-section-label">CLEARING & FORWARDING</span><h2 id="clearing-heading">Connect port arrival with the road ahead.</h2><p>Cargo arriving through Mombasa needs more than onward transport. Documentation, port processes and release requirements all form part of the journey.</p><p>Daneva brings clearing and transport discussions together to help prepare containerised and bulk cargo for inland movement.</p><ul className="home-check-list">{['Customs documentation coordination', 'Port process and cargo release requirements', 'Onward transport planning'].map(item => <li key={item}><Check aria-hidden="true" />{item}</li>)}</ul><Button to="/services#mombasa-clearing">Learn About Clearing</Button></div></Container></section>
 }
 
 const questions = [
