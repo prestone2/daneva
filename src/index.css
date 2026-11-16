@@ -10,6 +10,7 @@
 @import "./styles/loading.css";
 @import "./styles/journey.css";
 @import "./styles/signature.css";
+@import "./styles/feedback.css";
 
 @font-face {
   font-family: 'Manrope'; font-style: normal; font-weight: 400 800; font-display: swap;

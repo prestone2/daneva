@@ -1,5 +1,6 @@
 import { InternalPageHero } from '../components/sections/corporate/InternalPageHero'
 import { Container } from '../components/ui/Container'
+import { Button } from '../components/ui/Button'
 import { ContactForm } from '../components/forms/ContactForm'
 import { companyContact, contactHero } from '../data/contact'
 
@@ -11,10 +12,10 @@ export function ContactPage() {
         <div className="contact-information">
           <p className="eyebrow editorial-eyebrow">KENYA & UGANDA</p>
           <h2>{companyContact.company}</h2>
-          <p>{companyContact.context}</p>
+          <p>{companyContact.context}</p><Button to="/request-quote">Send a Quote Request</Button>
           <dl className="contact-details">
             <div><dt>Uganda headquarters</dt><dd><address>{companyContact.headquarters.map(line => <span key={line}>{line}</span>)}</address></dd></div>
-            <div><dt>Kenya operational presence</dt><dd>{companyContact.kenyaPresence}</dd></div>
+            <div><dt>Kenya operations</dt><dd>{companyContact.kenyaPresence}</dd></div>
             <div><dt>Additional supplied location</dt><dd>{companyContact.suppliedLocation.map(line => <span key={line}>{line}</span>)}</dd></div>
             <div><dt>Postal address</dt><dd>{companyContact.postal}</dd></div>
             <div><dt>Telephone</dt><dd><a href={companyContact.phone.href}>{companyContact.phone.display}</a></dd></div>

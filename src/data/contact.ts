@@ -29,7 +29,7 @@ export const companyContact: CompanyContact = {
   context: 'For transport, clearing or partnership enquiries, share your cargo requirements and the locations involved so the team can understand your needs.',
 }
 
-export const contactSubjects: SelectOption[] = ['Transport Enquiry', 'Containerised Cargo', 'Bulk Cargo', 'Mombasa Clearing', 'Business Partnership', 'General Enquiry'].map(value => ({ value, label: value }))
+export const contactSubjects: SelectOption[] = ['Transport Enquiry', 'Containerised Cargo', 'Bagged Cargo', 'Bulk Cargo', 'Loose Cargo', 'Mombasa Clearing', 'Business Partnership', 'General Enquiry'].map(value => ({ value, label: value }))
 
 export const contactFields: Record<keyof ContactEnquiry, FieldDefinition> = {
   fullName: { label: 'Full Name', required: true, maxLength: 100 },

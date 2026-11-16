@@ -1,9 +1,10 @@
+import { corridorNetwork } from './corridors'
 import type { AboutContent, CorridorContent, EditorialContent, QuoteContent, ServicesContent } from '../types/home'
 
 export const aboutContent: AboutContent = {
   eyebrow: 'ABOUT DANEVA',
   heading: 'About Daneva',
-  description: "Daneva Co. Limited provides long-distance haulage and clearing services connecting Mombasa and Nairobi with Kampala's inland container depots. With operations in Kenya and Uganda, the company supports the cross-border movement of containerised and bulk cargo.",
+  description: "Daneva connects Kenya and Uganda through long-distance haulage and Mombasa clearing services for containerised and bulk cargo.",
   capabilities: ['Kenya–Uganda Freight', 'Containerised Cargo', 'Bulk Cargo Transport', 'Mombasa Customs Clearing'],
   cta: { label: 'Discover Daneva', to: '/about' },
 }
@@ -12,7 +13,7 @@ export const servicesContent: ServicesContent = {
   eyebrow: 'OUR SERVICES',
   heading: 'Freight and Clearing, Working Together.',
   services: [
-    { title: 'Long-Distance Haulage', description: 'Cargo transportation between Mombasa, Nairobi and Kampala ICDs.', to: '/services' },
+    { title: 'Long-Distance Haulage', description: 'Exports from Uganda to Mombasa port, and imports and wheat grains from Kenya to Uganda.', to: '/services' },
     { title: 'Containerised & Bulk Cargo', description: 'Freight handling for containerised and bulk shipments.', to: '/services' },
     { title: 'Mombasa Clearing & Forwarding', description: 'Customs clearing and coordination for containerised and bulk cargo arriving through Mombasa.', to: '/services' },
   ],
@@ -21,14 +22,8 @@ export const servicesContent: ServicesContent = {
 export const corridorContent: CorridorContent = {
   eyebrow: 'THE NORTHERN CORRIDOR',
   heading: 'Connecting Mombasa, Nairobi and Kampala.',
-  stops: [
-    { city: 'MOMBASA', role: 'Port / Cargo Origin' },
-    { city: 'NAIROBI', role: 'Transit & Commercial Hub' },
-    { city: 'KAMPALA', role: 'Inland Container Depots' },
-  ],
-  diagramLabel: 'Freight corridor from Mombasa through Nairobi to Kampala',
-  caption: 'OpenStreetMap · Mombasa, Nairobi and Kampala.',
-  cta: { label: 'Explore Transport Corridors', to: '/transport-corridors' },
+  ...corridorNetwork,
+  cta: { label: 'Explore Routes', to: '/transport-corridors' },
 }
 
 export const fleetContent: EditorialContent = {
@@ -45,10 +40,10 @@ export const fleetContent: EditorialContent = {
 }
 
 export const safetyContent: EditorialContent = {
-  eyebrow: 'SAFETY & COMPLIANCE',
-  heading: 'Every Journey Deserves Care.',
+  eyebrow: 'OUR TEAM',
+  heading: 'The People Behind Your Cargo.',
   description: 'Responsible transport starts before departure. Vehicle inspections, driver readiness, careful cargo handling, and attention to cross-border requirements all have a part to play in moving freight between Kenya and Uganda.',
-  cta: { label: 'Our Approach to Safety', to: '/safety-compliance' },
+  cta: { label: 'Meet Our Team', to: '/safety-compliance' },
   features: [
     { title: 'Vehicle Readiness', description: 'Pre-journey inspections help identify issues that need attention before a vehicle takes to the road.' },
     { title: 'Driver Responsibility', description: 'Preparation, attentiveness, and responsible driving are important throughout a long-distance journey.' },

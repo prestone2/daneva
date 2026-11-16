@@ -14,11 +14,11 @@ export const quoteStages: { step: QuoteStep; title: string; introduction: string
   { step: 3, title: 'Clearing & Review', introduction: 'Confirm clearing needs and review your enquiry.', fields: ['clearing', 'notes'] },
 ]
 
-export const cargoTypes: SelectOption[] = ['Containerised Cargo', 'Bulk Cargo', 'General Freight', 'Other'].map(value => ({ value, label: value }))
+export const cargoTypes: SelectOption[] = ['Containerised Cargo', 'Bagged Cargo', 'Bulk Cargo', 'Loose Cargo', 'General Freight', 'Other'].map(value => ({ value, label: value }))
 export const containerSizes: SelectOption[] = ['20ft', '40ft', 'Other / Not Sure'].map(value => ({ value, label: value }))
 export const clearingOptions: SelectOption[] = ['Yes', 'No', 'Not Sure'].map(value => ({ value, label: value }))
-export const suggestedOrigins = ['Mombasa', 'Nairobi', 'Other']
-export const suggestedDestinations = ['Kampala ICD', 'Kampala', 'Other']
+export const suggestedOrigins = ['Mombasa Port', 'Mombasa wheat collection facility', 'Nairobi (Embakasi) wheat collection facility', 'Kampala', 'Other Uganda location', 'Other']
+export const suggestedDestinations = ['Mombasa Port', 'Kampala', 'Kampala ICD', 'Other Uganda destination', 'Other']
 
 export const quoteFields: Record<keyof FreightQuote, FieldDefinition> = {
   company: { label: 'Company / Organization', required: true, maxLength: 150 },

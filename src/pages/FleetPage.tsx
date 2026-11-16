@@ -5,5 +5,5 @@ import { OperationsOverview } from '../components/sections/corporate/OperationsO
 import { EnterpriseCTA } from '../components/sections/corporate/EnterpriseCTA'
 
 export function FleetPage() {
-  return <><InternalPageHero content={fleetPage.hero} variant="light" /><OperationsOverview sections={fleetPage.sections} /><FleetGallery /><EnterpriseCTA /></>
+  return <><InternalPageHero content={fleetPage.hero} variant="light" /><FleetGallery /><OperationsOverview sections={fleetPage.sections} /><EnterpriseCTA /></>
 }

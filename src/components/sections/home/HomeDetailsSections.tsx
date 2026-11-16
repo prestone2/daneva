@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Boxes, Check, ChevronDown, ClipboardList, Container as ContainerIcon, FileCheck2, MapPin, MessagesSquare, PackageCheck, Route, Truck } from 'lucide-react'
 import { Container } from '../../ui/Container'
 import { Button } from '../../ui/Button'
-import portClearing from '../../../assets/images/services/port-clearing.jpg'
+import { photography } from '../../../config/assets'
 
 const cargoTypes = [
   { icon: ContainerIcon, title: 'Containerised cargo', description: 'Coordinated transport for containerised shipments moving from the coast to inland destinations.', points: ['Port and collection arrangements', 'Container and load information', 'Destination handling requirements'] },
@@ -89,16 +89,16 @@ export function DestinationsSection() {
       if (distance > 0) setActive(Math.min(destinations.length - 1, Math.max(0, Math.round(track.scrollLeft / distance))))
     }}>{destinations.map(({ city, country, description, tags }) => <article className="destination-card" key={city}><MapPin aria-hidden="true" /><span>{country}</span><h3>{city}</h3><p>{description}</p><small>{tags}</small></article>)}</div>
     <div className="destination-carousel-controls"><span>{active + 1} / {destinations.length}</span><div aria-label="Choose a destination">{destinations.map(({city}, index) => <button type="button" key={city} aria-label={`Show ${city}`} aria-current={active === index ? 'true' : undefined} onClick={() => { setPaused(true); showCity(index) }}><span /></button>)}</div>{automatic ? <button type="button" className="destination-play" onClick={() => setPaused(value => !value)} aria-label={paused ? 'Resume city carousel' : 'Pause city carousel'}>{paused ? 'Play' : 'Pause'}</button> : <span>Swipe to explore</span>}</div>
-    <div className="home-section-action"><Button to="/transport-corridors">View Transport Corridors</Button></div>
+    <div className="home-section-action"><Button to="/transport-corridors">View Routes</Button></div>
   </Container></section>
 }
 
 export function ClearingSupportSection() {
-  return <section className="home-details" aria-labelledby="clearing-heading"><Container className="home-clearing-layout"><figure className="operations-image"><div className="operations-image-frame"><img src={portClearing} alt="Illustration of logistics professionals reviewing shipping documents overlooking a port" loading="lazy" decoding="async" /></div></figure><div><span className="home-section-label">CLEARING & FORWARDING</span><h2 id="clearing-heading">Connect port arrival with the road ahead.</h2><p>Cargo arriving through Mombasa needs more than onward transport. Documentation, port processes and release requirements all form part of the journey.</p><p>Daneva brings clearing and transport discussions together to help prepare containerised and bulk cargo for inland movement.</p><ul className="home-check-list">{['Customs documentation coordination', 'Port process and cargo release requirements', 'Onward transport planning'].map(item => <li key={item}><Check aria-hidden="true" />{item}</li>)}</ul><Button to="/services#mombasa-clearing">Learn About Clearing</Button></div></Container></section>
+  return <section className="home-details" aria-labelledby="clearing-heading"><Container className="home-clearing-layout"><figure className="operations-image"><div className="operations-image-frame"><img src={photography.yard.src} alt={photography.yard.alt} loading="lazy" decoding="async" /></div></figure><div><span className="home-section-label">CLEARING & FORWARDING</span><h2 id="clearing-heading">Connect port arrival with the road ahead.</h2><p>Cargo arriving through Mombasa needs more than onward transport. Documentation, port processes and release requirements all form part of the journey.</p><p>Daneva brings clearing and transport discussions together to help prepare containerised and bulk cargo for inland movement.</p><ul className="home-check-list">{['Customs documentation coordination', 'Port process and cargo release requirements', 'Onward transport planning'].map(item => <li key={item}><Check aria-hidden="true" />{item}</li>)}</ul><Button to="/services#mombasa-clearing">Learn About Clearing</Button></div></Container></section>
 }
 
 const questions = [
-  { question: 'Which routes does Daneva cover?', answer: 'Our primary freight connections run from Mombasa and Nairobi in Kenya to Kampala’s inland container depots in Uganda. Contact the team to discuss collection and destination requirements for your shipment.' },
+  { question: 'Which routes does Daneva cover?', answer: 'We transport export cargo from Uganda to Mombasa port, wheat grains from Nairobi’s Embakasi area and Mombasa to Kampala, and containers and loose cargo from Mombasa port into Uganda. Contact the team to discuss collection and delivery details.' },
   { question: 'What information do I need for a freight quote?', answer: 'Share your contact details, cargo description, origin and destination. Include the weight, dimensions, container details, preferred dates and any loading or clearing requirements you already know.' },
   { question: 'Can I discuss transport and clearing together?', answer: 'Yes. Daneva provides long-distance haulage and Mombasa clearing services. Include your clearing requirements when submitting a freight enquiry so the team can discuss both parts of the journey.' },
   { question: 'Do you transport both containerised and bulk cargo?', answer: 'Daneva handles enquiries for containerised and bulk cargo movements. The team will need the load details and handling requirements to discuss suitable arrangements for a particular shipment.' },
