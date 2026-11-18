@@ -11,7 +11,7 @@ export const footerGroups: FooterGroup[] = [
   { title: 'Company', links: [
     { label: 'About Us', to: '/about' },
     { label: 'Fleet & Operations', to: '/fleet-operations' },
-    { label: 'Safety & Compliance', to: '/safety-compliance' },
+    { label: 'Our Team', to: '/safety-compliance' },
   ] },
   { title: 'Services', links: [
     { label: 'Long-Distance Haulage', to: '/services' },
@@ -19,7 +19,7 @@ export const footerGroups: FooterGroup[] = [
     { label: 'Mombasa Clearing', to: '/services' },
   ] },
   { title: 'Quick Links', links: [
-    { label: 'Transport Corridors', to: '/transport-corridors' },
+    { label: 'Routes', to: '/transport-corridors' },
     { label: 'Request a Quote', to: '/request-quote' },
     { label: 'Contact', to: '/contact' },
   ] },

@@ -1,0 +1,38 @@
+/* Website feedback: readable body copy and concise, responsive content cards. */
+.feedback-section { padding: clamp(48px, 7vw, 96px) 0; background: #fff; }
+.feedback-section--tinted { background: #eaf2fa; }
+.feedback-heading { max-width: 720px; margin-bottom: 32px; }
+.feedback-heading h2, .routes-map-heading { font-size: clamp(28px, 4vw, 44px); line-height: 1.2; color: #102b4e; margin-bottom: 18px; }
+.feedback-heading p:not(.home-section-label), .feedback-card p, .routes-map-note { color: #42546b; line-height: 1.8; }
+.feedback-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.feedback-grid--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.feedback-grid--four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.feedback-card { padding: 28px; border: 1px solid #cbd6e2; border-radius: 4px; background: #fff; }
+.feedback-card > svg { color: #b71c1c; margin-bottom: 20px; }
+.feedback-card h3 { color: #102b4e; font-size: 21px; line-height: 1.5; margin-bottom: 14px; }
+.routes-map-note { max-width: 720px; margin-bottom: 28px; }
+.route-direction-marker { color: #b71c1c; font-size: 25px; }
+.route-direction-marker span { display: block; line-height: 28px; text-shadow: 0 0 3px white; }
+:is(.services-showcase-heading, .about-preview-copy, .fleet-editorial-copy, .home-details-heading) > p,
+:is(.service-card-content, .service-detail-copy) > p:not(.service-detail-lead),
+.editorial-copy > p, .principles-heading > p { color: #42546b; }
+.contact-information > .button { margin-top: 24px; }
+@media (max-width: 1000px) { .feedback-grid--four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .feedback-grid { grid-template-columns: 1fr; } .feedback-card { padding: 24px; } }
+
+.about-section .editorial-description, .fleet-section .editorial-description,
+.corporate-prose p, .corporate-purpose p, .corporate-presence p, .corporate-principles p { color: #42546b; }
+
+.editorial-section-index, .fleet-photo-gallery figcaption { color: #42546b; }
+
+.route-map-legend { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding: 18px; margin: 0; list-style: none; background: #fff; color: #102b4e; }
+.route-map-legend li { display: flex; gap: 10px; align-items: flex-start; min-width: 0; }
+.route-map-swatch { width: 22px; height: 4px; flex: 0 0 22px; margin-top: 8px; }
+.route-map-legend strong { display: block; font-size: 12px; line-height: 1.6; }
+.route-map-legend li > span > span { display: block; font-size: 11px; line-height: 1.7; color: #42546b; }
+.feedback-card .route-card-category { color: #b71c1c; font-size: 13px; font-weight: 750; margin-bottom: 12px; }
+@media (max-width: 900px) { .route-map-legend { grid-template-columns: 1fr; } }
+
+.route-map-swatch--uganda-exports { background: #155e75; }
+.route-map-swatch--wheat-grains { background: #854d0e; }
+.route-map-swatch--port-imports { background: #b91c1c; }

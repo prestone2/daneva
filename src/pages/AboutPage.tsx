@@ -15,7 +15,6 @@ export function AboutPage() {
           <p className="eyebrow editorial-eyebrow">{aboutPage.purpose.eyebrow}</p>
           <h2 id="purpose-heading">{aboutPage.purpose.heading}</h2>
           <div className="corporate-purpose">{aboutPage.purpose.statements.map(({ title, description }) => <div key={title}><h3>{title}</h3><p>{description}</p></div>)}</div>
-          <p className="corporate-note">{aboutPage.purpose.note}</p>
         </Container>
       </section>
       <PrinciplesSection id="core-values" {...aboutPage.values} />

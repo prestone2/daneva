@@ -1,7 +1,4 @@
-import { CargoSection, FreightProcessSection, DestinationsSection, ClearingSupportSection, HomeFAQSection, ShipmentChecklistSection } from '../components/sections/home/HomeDetailsSections'
-import { SafetyComplianceSection } from '../components/sections/home/SafetyComplianceSection'
 import { HeroSection } from '../components/sections/home/HeroSection'
-import { CapabilityStrip } from '../components/sections/home/CapabilityStrip'
 import { Metadata } from '../components/ui/Metadata'
 import { pages } from '../data/pages'
 import { FleetOperationsSection } from '../components/sections/home/FleetOperationsSection'
@@ -15,20 +12,10 @@ export function HomePage() {
     <>
       <Metadata {...pages[0]} />
       <HeroSection />
-      <CapabilityStrip />
       <AboutPreviewSection />
       <ServicesShowcaseSection />
-      <CargoSection />
-      <FreightProcessSection />
       <TransportCorridorSection />
-      <DestinationsSection />
-      <div className="operations-stack">
-        <FleetOperationsSection />
-        <ClearingSupportSection />
-        <SafetyComplianceSection />
-      </div>
-      <HomeFAQSection />
-      <ShipmentChecklistSection />
+      <FleetOperationsSection />
       <EnterpriseCTA />
     </>
   )
