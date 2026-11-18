@@ -1,5 +1,13 @@
 # Content and asset approval register
 
+## Current status — 18 November 2026
+
+The user approved the current website content, design, contact information and selected imagery as presented. The About and Contact draft approval notices have been removed. The current site uses client-supplied fleet photographs, and the routes were confirmed on 16 November 2026.
+
+The Phase 3B register below is historical and includes superseded missing-photo and approval notes. Use [the current follow-up](website-feedback-follow-up.md) and [launch checklist](../LAUNCH_CHECKLIST.md) for current status. Quote email setup, the production domain and hosting, and live delivery/deployment verification remain technical launch tasks.
+
+## Historical Phase 3B register
+
 Phase 3B review of the current source. Existing unverified copy was not silently promoted into verified facts. This register is an internal launch gate, not evidence that operating claims have been independently certified.
 
 | Item | Current presentation/evidence | Required action |

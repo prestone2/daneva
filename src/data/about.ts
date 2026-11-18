@@ -16,7 +16,6 @@ export const aboutPage = {
   } satisfies CorporateSection,
   purpose: {
     eyebrow: 'OUR DIRECTION', heading: 'Purpose That Guides Our Work.',
-    note: 'Mission and vision are website-friendly summaries derived from the supplied company content, subject to final client approval.',
     statements: [
       { title: 'Mission', description: 'Support reliable, safe and coordinated cargo transport and clearing between Kenya and Uganda.' },
       { title: 'Vision', description: 'Become a trusted regional logistics partner recognized for operational reliability, responsible freight movement, and professional service.' },

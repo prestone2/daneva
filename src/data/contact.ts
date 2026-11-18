@@ -14,7 +14,6 @@ interface CompanyContact {
   suppliedLocation: string[]
   postal: string
   phone: { display: string; href: string }
-  approvalNotice: string
   context: string
 }
 
@@ -25,7 +24,6 @@ export const companyContact: CompanyContact = {
   suppliedLocation: ['Shell Bonje Hill Station,', 'Mombasa–Nairobi Road'],
   postal: 'P.O. Box 41997',
   phone: { display: '+256 703 761117', href: 'tel:+256703761117' },
-  approvalNotice: 'These supplied contact details, including the additional location and postal address, require final client approval before production publication.',
   context: 'For transport, clearing or partnership enquiries, share your cargo requirements and the locations involved so the team can understand your needs.',
 }
 

@@ -1,6 +1,7 @@
 # Static website launch checklist
 
-- [ ] Client confirms domain, logo, contact details, service content and generated imagery.
+- [x] Current website content, design, logo, contact details and selected imagery approved by the user on 18 November 2026.
+- [ ] Live domain and hosting destination confirmed.
 - [ ] Client confirms the FormSubmit receiving email and activates it.
 - [ ] Contact and freight quote delivery tested with approval.
 - [ ] Privacy notice reflects FormSubmit, the receiving mailbox and map provider.

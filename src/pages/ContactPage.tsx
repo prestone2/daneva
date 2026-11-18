@@ -20,7 +20,6 @@ export function ContactPage() {
             <div><dt>Postal address</dt><dd>{companyContact.postal}</dd></div>
             <div><dt>Telephone</dt><dd><a href={companyContact.phone.href}>{companyContact.phone.display}</a></dd></div>
           </dl>
-          <p className="contact-approval">{companyContact.approvalNotice}</p>
         </div>
         <ContactForm />
       </Container>

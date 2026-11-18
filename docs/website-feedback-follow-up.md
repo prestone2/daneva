@@ -3,6 +3,14 @@
 Local revisions based on “Website comments Danver.pdf” (11 November 2026).
 The PDF is stakeholder feedback; it does not authorize outreach or publication.
 
+## Current approval status — 18 November 2026
+
+The user approved the website as it currently stands, including its current content, design and selected imagery. No further content approval is required for this version. Removed the visitor-facing draft approval notices from About and Contact.
+
+Additional videos, team photographs, facility names and other previously requested materials can be added as future updates. The historical list below is retained for reference, not as a launch approval gate.
+
+Technical launch tasks remain: supply/configure the receiving email for enquiries, activate delivery and test receipt; confirm the live domain and hosting destination; build and publish with production settings; verify the deployed site. Content approval does not establish that these technical steps have been completed.
+
 ## Implemented
 
 - Homepage reduced to six sections: hero, company introduction, services, routes, fleet, quote CTA.
@@ -13,7 +21,7 @@ The PDF is stakeholder feedback; it does not authorize outreach or publication.
 - Fleet gallery placed before operational summaries.
 - Prominent Send a Quote Request link on Contact, and darker supporting text on light backgrounds.
 
-## Required before completing client review
+## Earlier follow-up items — superseded by current-version approval
 
 - Maurine: select and approve actual photos and videos, and coordinate the consent records requested in the feedback. Existing client-supplied images are not evidence of consent.
 - Supply separate home and About videos, driver group photography, mechanic/office media and an approved TikTok profile URL. Confirm any named individuals' participation.
@@ -48,3 +56,12 @@ The client confirmed three cargo movements:
 Updated the route cards, homepage route summary, About and Services descriptions, route metadata, quote location suggestions and map. The map uses separate coloured connections and direction arrows for exports, wheat and port imports. Nairobi’s marker identifies the Embakasi area; no exact facility address is asserted. The wheat facility name is pending spelling confirmation.
 
 Verification after the route update: build and all 54 tests passed. The full browser suite passed 81 route/viewport checks and 19 accessibility scans without runtime, CSP or accessibility errors. Additional map checks at 375px and 1440px confirmed three visible coloured connections, six arrows, no horizontal overflow and preserved arrows after zooming.
+
+## Visual polish — 18 November 2026
+
+- Standardised section spacing and increased supporting text sizes across Home, About, Services, Fleet, Routes, Contact and quote forms.
+- Aligned the service cards to a consistent grid with matching image proportions and action links.
+- Adjusted editorial and fleet photo proportions to show more of the actual vehicles.
+- Enlarged primary buttons and mobile tap targets, with visible keyboard focus.
+- Improved footer readability and mobile call-to-action spacing.
+- Build and built-page checks passed. Chrome checks passed all 81 route/viewport combinations and 19 accessibility scans, without runtime, CSP or accessibility errors. Home and Services screenshots were reviewed at 375px and 1440px.
